@@ -1,72 +1,3 @@
-A React Native mobile application that demonstrates full CRUD (Create, Read, Update, Delete) operations using Google Firebase Firestore as the backend database. The app allows users to manage a list of user profiles with name, email, and mobile information, accessible on both Android and iOS platforms.
-
-### Stack
-- **Language(s):** JavaScript (React Native)
-- **Framework / runtime:** React Native 0.63.2, React 16.13.1
-- **Notable libraries:** React Navigation (Stack Navigator), Firebase Firestore, React Native Elements (UI components), React Native Vector Icons
-
-## How it's organized
-
-```
-android/                       Android native project files
-  app/src/screens/             Screen components (UI)
-    AddUserScreen.js           Create new user form
-    UserScreen.js              List all users
-    UserDetailScreen.js        View/edit/delete single user
-ios/                          iOS native project files
-App.js                        Navigation setup and stack navigator
-index.js                      App entry point
-package.json                  Dependencies and scripts
-```
-
-**How it fits together:**
-
-The app uses React Navigation's Stack Navigator to manage screen transitions. When the app starts, `App.js` initializes the navigation stack with three screens: `AddUserScreen` (form to create users), `UserScreen` (list view), and `UserDetailScreen` (detail/edit view). Each screen interacts with Firebase Firestore's 'Users' collection—AddUserScreen creates records, UserScreen reads and displays them in real-time via `onSnapshot()`, and UserDetailScreen reads individual documents for editing or deletes them.
-
-## How to run it
-
-### Prerequisites
-- Node.js and npm installed
-- React Native CLI
-- Android SDK / Android Studio (for Android)
-- Xcode (for iOS)
-- Firebase project with Firestore database configured
-
-### Setup & Installation
-
-```bash
-# Install dependencies
-npm install
-
-# For Android
-npm run android
-# or
-react-native run-android
-
-# For iOS
-npm run ios
-# or
-react-native run-ios
-
-# Start Metro bundler (if not started automatically)
-npm start
-# or
-react-native start
-```
-
-### Required Configuration
-You must configure Firebase credentials in your native Android/iOS project files (google-services.json for Android, GoogleService-Info.plist for iOS). Ensure your Firebase project has a Firestore database initialized with a 'Users' collection.
-
-### Scripts
-- `npm start` — Start the Metro bundler
-- `npm run android` — Build and run on Android emulator/device
-- `npm run ios` — Build and run on iOS simulator/device
-- `npm test` — Run Jest tests
-- `npm run lint` — Run ESLint
-
----
-
-````markdown name=README.md
 # React Native CRUD Firebase
 
 A React Native mobile application for managing user profiles with full CRUD functionality using Google Firebase Firestore.
@@ -229,4 +160,3 @@ Unlicensed — Open source project available for learning and modification.
 ## Author
 
 [Omesh Kumar](https://github.com/omeshkumarfso)
-````
